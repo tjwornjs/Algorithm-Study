@@ -43,8 +43,16 @@ public class SortTest {
     }
 
     @Test
-    public void QuickSortTest(){
+    public void QuickSortTest() {
         Sort sort = new QuickSort();
+        int[] list = Arrays.copyOf(unSortedList, unSortedList.length);
+        sort.sortArray(list);
+        Assert.assertArrayEquals(sortedList, list);
+    }
+
+    @Test
+    public void HeapSortTest() {
+        Sort sort = new HeapSort();
         int[] list = Arrays.copyOf(unSortedList, unSortedList.length);
         sort.sortArray(list);
         Assert.assertArrayEquals(sortedList, list);
