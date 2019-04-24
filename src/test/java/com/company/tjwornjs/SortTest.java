@@ -1,9 +1,6 @@
 package com.company.tjwornjs;
 
-import com.company.tjwornjs.sort.InsertionSort;
-import com.company.tjwornjs.sort.MergeSort;
-import com.company.tjwornjs.sort.SelectionSort;
-import com.company.tjwornjs.sort.Sort;
+import com.company.tjwornjs.sort.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,8 +27,24 @@ public class SortTest {
     }
 
     @Test
-    public void SelectionSortTest() {
+    public void selectionSortTest() {
         Sort sort = new SelectionSort();
+        int[] list = Arrays.copyOf(unSortedList, unSortedList.length);
+        sort.sortArray(list);
+        Assert.assertArrayEquals(sortedList, list);
+    }
+
+    @Test
+    public void BubbleSortTest() {
+        Sort sort = new BubbleSort();
+        int[] list = Arrays.copyOf(unSortedList, unSortedList.length);
+        sort.sortArray(list);
+        Assert.assertArrayEquals(sortedList, list);
+    }
+
+    @Test
+    public void QuickSortTest(){
+        Sort sort = new QuickSort();
         int[] list = Arrays.copyOf(unSortedList, unSortedList.length);
         sort.sortArray(list);
         Assert.assertArrayEquals(sortedList, list);
